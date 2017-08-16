@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace FunnyProperties
 {
-    public class DigPow
+    class Class1
     {
-        public static long digPow(int n, int p)
-        {
-
-            return -1;
-        }
     }
 }

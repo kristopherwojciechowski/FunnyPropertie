@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C3C8BBFE-569E-4A2F-80CA-0F1B347699D0}</ProjectGuid>
+    <ProjectGuid>{CACF226F-95C5-496E-9333-604FB0AE0EA6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FunnyProperties</RootNamespace>
-    <AssemblyName>FunnyProperties</AssemblyName>
+    <RootNamespace>Funny_Properites</RootNamespace>
+    <AssemblyName>Funny_Properites</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

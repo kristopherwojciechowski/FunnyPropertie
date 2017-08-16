@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FunnyProperties
+namespace Funny_Properites
 {
-    class Program
+    class DigPow
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

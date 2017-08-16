@@ -10,6 +10,7 @@ namespace Funny_Properites
     {
         static void Main(string[] args)
         {
+            DigPow.digPow(2, 2);
             Console.WriteLine("podajliczbe:");
             String positivIntegerN = Console.ReadLine();
             String k = positivIntegerN.Substring(0, 1);

@@ -78,10 +78,6 @@ namespace Funny_Properites
             int x,y;
             int wynik = arr[0];
             int indeks = 0;
-            //for (int mm = 0; mm < arr.Length; mm++)
-            //{
-            //    Console.WriteLine(arr[mm]);
-            //}
 
             for (int i = 0; i < arr.Length-1; i++)
             {

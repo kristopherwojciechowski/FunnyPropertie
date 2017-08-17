@@ -8,19 +8,23 @@ namespace Funny_Properites
 {
     public class DigPow
     {
-        public static long digPow(int n, int p)
+        public static double digPow(int n, int p)
         {
             String positivIntegerN = n.ToString();
-            int tempNum, k;
+            int tempNum;
             double sum = 0;
-            for (int m=1; m<(positivIntegerN.Length - 1); m++)
+            for (int m = 1; m <= positivIntegerN.Length; m++)
             {
-                tempNum = Int32.Parse(positivIntegerN.Substring(m - 1, m));
-                sum = sum + Math.Pow(System.Convert.ToDouble(tempNum),
-                    System.Convert.ToDouble(p));
+                tempNum = Int32.Parse(positivIntegerN.Substring(m - 1, 1));
+                sum = sum + Math.Pow(Convert.ToDouble(tempNum), Convert.ToDouble(p + m - 1));
             }
-            int zwrot;
-            zwrot = (int) sum / n;
+            double resztaZDzielenie = sum % double.Parse(positivIntegerN);
+
+            if (resztaZDzielenie == 0)
+            {
+                return sum / double.Parse(positivIntegerN);
+            }
+
             return -1;
         }
 

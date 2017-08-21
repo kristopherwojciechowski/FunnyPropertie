@@ -24,7 +24,6 @@ namespace Funny_Properites
             {
                 return sum / double.Parse(positivIntegerN);
             }
-
             return -1;
         }
 

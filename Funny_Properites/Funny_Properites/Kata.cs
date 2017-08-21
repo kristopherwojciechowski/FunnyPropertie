@@ -30,6 +30,7 @@ namespace Funny_Properites
                     }
                 }
             }
+
             int min;
             if (Math.Abs(maxNegativValue) < Math.Abs(minPositivValue))
             {
@@ -38,6 +39,7 @@ namespace Funny_Properites
             {
                 min = minPositivValue;
             }
+
             if (Math.Abs(maxNegativValue) == Math.Abs(minPositivValue))
             {
                 return null;

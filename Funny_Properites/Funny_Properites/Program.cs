@@ -72,28 +72,65 @@ namespace Funny_Properites
             //    }
             //}
 
-            int[] arr = new int[7]{ 14, 12, -7, -3, -5, 0, -1};
+            //int[] arr = new int[7]{ 14, 12, -7, -3, -5, 1, -1};
+            int[] arr = new int[5] { 5, 1, -1, 2, -10 };
 
             int modul = Math.Abs(arr[0]);
-            int x,y;
+            int modulminus = Math.Abs(arr[0]);
+
+            int x,y,a,b;
             int wynik = arr[0];
+            int wynikminus = arr[0];
+
             int indeks = 0;
+            int indeks2 = 0;
 
             for (int i = 0; i < arr.Length-1; i++)
             {
-                x = Math.Abs(arr[i]);
-                y = Math.Abs(arr[i+1]);
-                if (x>y)
+                if (arr[i] >= 0)
                 {
-                    modul = y;
-                    wynik = arr[i + 1];
-                    indeks = i;
+                    x = Math.Abs(arr[i]);
+                    y = Math.Abs(arr[i + 1]);
+                    if (x > y)
+                    {
+                        modul = y;
+                        wynik = arr[i + 1];
+                        indeks = i+1;
+                    }
+                }
+                else
+                {
+                    a = Math.Abs(arr[i]);
+                    b = Math.Abs(arr[i + 1]);
+                    if (a > b)
+                    {
+                        modulminus = b;
+                        wynikminus = arr[i + 1];
+                        indeks2 = i+1;
+                    }
                 }
                 Console.WriteLine("roznica: {0};  wynik: {0};  indeks: {2}", modul, wynik, indeks);
+                Console.WriteLine("roznica: {0};  wynik: {0};  indeks: {2}", modulminus, wynikminus, indeks);
+            }
+
+            Console.WriteLine();
+
+            if (wynik == wynikminus)
+            {
+                Console.WriteLine("jest wiecej niz jedno rozwiazania");
+            }
+            else if (wynik > wynikminus)
+            {
+                Console.WriteLine("rozwizaniem jest: " + wynikminus);
+            }
+            else
+            {
+                Console.WriteLine("rozwizaniem jest: " + wynik);
             }
 
             //Console.WriteLine(DigPow.digPow(46288, 3));
             //Console.WriteLine(digPow(46288, 3));
+            Console.WriteLine(Kata.Closest(arr));
             Console.ReadKey();
         }
     }

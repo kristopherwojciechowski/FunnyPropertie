@@ -19,10 +19,10 @@ namespace Funny_Properites
                 {
                     roznica = Math.Abs(arr[i + 1]);
                     wynik = arr[i+1];
+                    return wynik;
                 }
             }
-
-            return 0;
+            return null;
         }
     }
 }

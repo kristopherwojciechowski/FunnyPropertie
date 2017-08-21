@@ -72,65 +72,65 @@ namespace Funny_Properites
             //    }
             //}
 
-            //int[] arr = new int[7]{ 14, 12, -7, -3, -5, 1, -1};
-            int[] arr = new int[5] { 5, 1, -1, 2, -10 };
+            //int[] arr = new int[7] { 14, 12, -7, -3, -5, 3, -2 };
+            int[] arr = new int[6] { -5, 11, 11, 2, -1, 1 };
 
-            int modul = Math.Abs(arr[0]);
-            int modulminus = Math.Abs(arr[0]);
-
-            int x,y,a,b;
-            int wynik = arr[0];
-            int wynikminus = arr[0];
-
-            int indeks = 0;
-            int indeks2 = 0;
-
-            for (int i = 0; i < arr.Length-1; i++)
+            Console.WriteLine("Array: ");
+            for (int m = 0; m<arr.Length; m++)
             {
-                if (arr[i] >= 0)
-                {
-                    x = Math.Abs(arr[i]);
-                    y = Math.Abs(arr[i + 1]);
-                    if (x > y)
-                    {
-                        modul = y;
-                        wynik = arr[i + 1];
-                        indeks = i+1;
-                    }
-                }
-                else
-                {
-                    a = Math.Abs(arr[i]);
-                    b = Math.Abs(arr[i + 1]);
-                    if (a > b)
-                    {
-                        modulminus = b;
-                        wynikminus = arr[i + 1];
-                        indeks2 = i+1;
-                    }
-                }
-                Console.WriteLine("roznica: {0};  wynik: {0};  indeks: {2}", modul, wynik, indeks);
-                Console.WriteLine("roznica: {0};  wynik: {0};  indeks: {2}", modulminus, wynikminus, indeks);
+                Console.WriteLine("m = {0}, arr[{0}] = {1} ",m, arr[m]);
             }
 
             Console.WriteLine();
 
-            if (wynik == wynikminus)
+            int minPositivValue = arr[0];
+            int maxNegativValue = arr[0];
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] >= 0)
+                {
+                    if (Math.Abs(arr[i]) <= Math.Abs(minPositivValue))
+                    {
+                        minPositivValue = arr[i];
+                    }
+                }
+                else
+                {
+                    if (Math.Abs(arr[i]) <= Math.Abs(maxNegativValue))
+                    {
+                        maxNegativValue = arr[i];
+                    }
+                }
+                Console.WriteLine("roznica: {0}; ", minPositivValue);
+                Console.WriteLine("Dla wartosci ujemnych:");
+                Console.WriteLine("roznica: {0}; ", maxNegativValue);
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+
+            int abs1 = Math.Abs(maxNegativValue);
+            int abs2 = Math.Abs(minPositivValue);
+
+            if (abs1 == abs2)
             {
                 Console.WriteLine("jest wiecej niz jedno rozwiazania");
             }
-            else if (wynik > wynikminus)
+            else if (abs1 < abs2)
             {
-                Console.WriteLine("rozwizaniem jest: " + wynikminus);
+                Console.WriteLine("rozwizaniem jest: " + maxNegativValue);
             }
             else
             {
-                Console.WriteLine("rozwizaniem jest: " + wynik);
+                Console.WriteLine("rozwizaniem jest: " + minPositivValue);
             }
 
             //Console.WriteLine(DigPow.digPow(46288, 3));
             //Console.WriteLine(digPow(46288, 3));
-            Console.WriteLine(Kata.Closest(arr));
+            Console.WriteLine();
+
+            Console.WriteLine("klasa Kata; wynik: " + Kata.Closest(arr));
             Console.ReadKey();
         }
     }

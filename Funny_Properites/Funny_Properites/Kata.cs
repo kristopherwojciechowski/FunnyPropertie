@@ -10,19 +10,42 @@ namespace Funny_Properites
     {
         public static int? Closest(int[] arr)
         {
-            int roznica, wynik;
-            for (int i=0; i<arr.Length; i++)
+            int minPositivValue = arr[0];
+            int maxNegativValue = arr[0];
+
+            for (int i = 1; i < arr.Length; i++)
             {
-                roznica = Math.Abs(arr[i]);
-                wynik = arr[i];
-                if( Math.Abs(arr[i+1]) < roznica)
+                if (arr[i] >= 0)
                 {
-                    roznica = Math.Abs(arr[i + 1]);
-                    wynik = arr[i+1];
-                    return wynik;
+                    if (Math.Abs(arr[i]) <= Math.Abs(minPositivValue))
+                    {
+                        minPositivValue = arr[i];
+                    }
+                }
+                else
+                {
+                    if (Math.Abs(arr[i]) <= Math.Abs(maxNegativValue))
+                    {
+                        maxNegativValue = arr[i];
+                    }
                 }
             }
-            return null;
+            int min;
+            if (Math.Abs(maxNegativValue) < Math.Abs(minPositivValue))
+            {
+                min = maxNegativValue;
+            } else
+            {
+                min = minPositivValue;
+            }
+            if (Math.Abs(maxNegativValue) == Math.Abs(minPositivValue))
+            {
+                return null;
+            }
+            else 
+            {
+                return min;
+            }
         }
     }
 }

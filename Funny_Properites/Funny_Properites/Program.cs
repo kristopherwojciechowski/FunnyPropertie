@@ -73,64 +73,71 @@ namespace Funny_Properites
             //}
 
             //int[] arr = new int[7] { 14, 12, -7, -3, -5, 3, -2 };
-            int[] arr = new int[6] { -5, 11, 11, 2, -1, 1 };
+            //int[] arr = new int[6] { -5, 11, 11, 2, -1, 1 };
 
-            Console.WriteLine("Array: ");
-            for (int m = 0; m<arr.Length; m++)
-            {
-                Console.WriteLine("m = {0}, arr[{0}] = {1} ",m, arr[m]);
-            }
+            //Console.WriteLine("Array: ");
+            //for (int m = 0; m<arr.Length; m++)
+            //{
+            //    Console.WriteLine("m = {0}, arr[{0}] = {1} ",m, arr[m]);
+            //}
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            int minPositivValue = arr[0];
-            int maxNegativValue = arr[0];
+            //int minPositivValue = arr[0];
+            //int maxNegativValue = arr[0];
 
-            for (int i = 1; i < arr.Length; i++)
-            {
-                if (arr[i] >= 0)
-                {
-                    if (Math.Abs(arr[i]) <= Math.Abs(minPositivValue))
-                    {
-                        minPositivValue = arr[i];
-                    }
-                }
-                else
-                {
-                    if (Math.Abs(arr[i]) <= Math.Abs(maxNegativValue))
-                    {
-                        maxNegativValue = arr[i];
-                    }
-                }
-                Console.WriteLine("roznica: {0}; ", minPositivValue);
-                Console.WriteLine("Dla wartosci ujemnych:");
-                Console.WriteLine("roznica: {0}; ", maxNegativValue);
-                Console.WriteLine();
-            }
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    if (arr[i] >= 0)
+            //    {
+            //        if (Math.Abs(arr[i]) <= Math.Abs(minPositivValue))
+            //        {
+            //            minPositivValue = arr[i];
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (Math.Abs(arr[i]) <= Math.Abs(maxNegativValue))
+            //        {
+            //            maxNegativValue = arr[i];
+            //        }
+            //    }
+            //    Console.WriteLine("roznica: {0}; ", minPositivValue);
+            //    Console.WriteLine("Dla wartosci ujemnych:");
+            //    Console.WriteLine("roznica: {0}; ", maxNegativValue);
+            //    Console.WriteLine();
+            //}
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            int abs1 = Math.Abs(maxNegativValue);
-            int abs2 = Math.Abs(minPositivValue);
+            //int abs1 = Math.Abs(maxNegativValue);
+            //int abs2 = Math.Abs(minPositivValue);
 
-            if (abs1 == abs2)
-            {
-                Console.WriteLine("jest wiecej niz jedno rozwiazania");
-            }
-            else if (abs1 < abs2)
-            {
-                Console.WriteLine("rozwizaniem jest: " + maxNegativValue);
-            }
-            else
-            {
-                Console.WriteLine("rozwizaniem jest: " + minPositivValue);
-            }
+            //if (abs1 == abs2)
+            //{
+            //    Console.WriteLine("jest wiecej niz jedno rozwiazania");
+            //}
+            //else if (abs1 < abs2)
+            //{
+            //    Console.WriteLine("rozwizaniem jest: " + maxNegativValue);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("rozwizaniem jest: " + minPositivValue);
+            //}
 
-            //Console.WriteLine(DigPow.digPow(46288, 3));
-            //Console.WriteLine(digPow(46288, 3));
-            Console.WriteLine();
+            ////Console.WriteLine(DigPow.digPow(46288, 3));
+            ////Console.WriteLine(digPow(46288, 3));
+            //Console.WriteLine();
 
-            Console.WriteLine("klasa Kata; wynik: " + Kata.Closest(arr));
+            //Console.WriteLine("klasa Kata; wynik: " + Kata.Closest(arr));
+
+            Fighter john = new Fighter("John", 11);
+            Fighter jas = new Fighter("Jas", 22);
+
+
+
+
             Console.ReadKey();
         }
     }

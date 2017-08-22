@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DigPow.cs" />
+    <Compile Include="Fighter.cs" />
     <Compile Include="Final_Sol.cs" />
     <Compile Include="Kata.cs" />
     <Compile Include="Program.cs" />

@@ -18,38 +18,62 @@ namespace Funny_Properites
             this.health = Health;
         }
 
+        public String Name
+        {
+            get
+            {
+                return name;
+            }
+        }
+
+        public int Health
+        {
+            get
+            {
+                return health;
+            }
+            set
+            {
+                health = value;
+            }
+        }
+
         // set accesors: GET & SET
 
-        public static string fight(Fighter name1, Fighter name2)
+        public static string fight(Fighter fighter1, Fighter fighter2)
         {
             Fighter winner = new Fighter();
             Random rand = new Random();
 
             int hit1, hit2;
-            while (name1.health > 0 | name2.health > 0)
+            do
             {
                 hit1 = rand.Next(10);
                 hit2 = rand.Next(10);
                 if (hit1 > hit2)
                 {
-                    name2.health = name2.health - hit1;
+                    fighter2.health = fighter2.health - hit1;
                 }
 
                 hit1 = rand.Next(10);
                 hit2 = rand.Next(10);
                 if (hit1 < hit2)
                 {
-                    name1.health = name1.health - hit2;
+                    fighter1.health = fighter1.health - hit2;
                 }
 
-                if (name1.health < 0)
+                if (fighter1.health < 0)
                 {
-                    winner.name = name2.name;
-                } else
-                {
-                    winner.name = name1.name;
+                    winner.name = fighter2.name;
                 }
-            }
+
+                if (fighter2.health < 0)
+                {
+                    winner.name = fighter1.name;
+                }
+
+            } while (fighter1.health > 0 && fighter2.health > 0);
+
             return winner.name;
         } 
     }

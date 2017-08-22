@@ -8,33 +8,33 @@ namespace Funny_Properites
 {
     class Program
     {
-        public static int[] intToIntArray(int num)
-        {
-            String number = num.ToString();
-            int[] intArray = new int[number.Length];
-            for (int k = 1; k<=number.Length; k++)
-            {
-                intArray[k-1] = Int32.Parse(number.Substring(k-1, 1));
-            }
-            return intArray;
-        }
+        //public static int[] intToIntArray(int num)
+        //{
+        //    String number = num.ToString();
+        //    int[] intArray = new int[number.Length];
+        //    for (int k = 1; k<=number.Length; k++)
+        //    {
+        //        intArray[k-1] = Int32.Parse(number.Substring(k-1, 1));
+        //    }
+        //    return intArray;
+        //}
 
-        public static double digPow(int n, int p)
-        {
-            int[] nToArray = intToIntArray(n);
-            double sum = 0;
-            for (int m = 0; m < nToArray.Length; m++)
-            {
-                sum = sum + Math.Pow(Convert.ToDouble(nToArray[m]), Convert.ToDouble(p));
-            }
-            double resztaZDzielenie = sum % n;
+        //public static double digPow(int n, int p)
+        //{
+        //    int[] nToArray = intToIntArray(n);
+        //    double sum = 0;
+        //    for (int m = 0; m < nToArray.Length; m++)
+        //    {
+        //        sum = sum + Math.Pow(Convert.ToDouble(nToArray[m]), Convert.ToDouble(p));
+        //    }
+        //    double resztaZDzielenie = sum % n;
 
-            if (resztaZDzielenie == 0)
-            {
-                return sum / n;
-            }
-            return -1;
-        }
+        //    if (resztaZDzielenie == 0)
+        //    {
+        //        return sum / n;
+        //    }
+        //    return -1;
+        //}
         static void Main(string[] args)
         {
             /*
@@ -132,9 +132,69 @@ namespace Funny_Properites
 
             //Console.WriteLine("klasa Kata; wynik: " + Kata.Closest(arr));
 
-            Fighter john = new Fighter("John", 11);
             Fighter jas = new Fighter("Jas", 22);
+            Fighter john = new Fighter("John", 11);
 
+            Fighter winner = new Fighter();
+            Random rand = new Random();
+
+            Console.WriteLine("john health: " + john.health);
+            Console.WriteLine("jas health: " + jas.health);
+
+            Console.WriteLine();
+
+            int hit1, hit2, i = 0;
+            do
+            {
+                hit1 = rand.Next(10);
+                hit2 = rand.Next(10);
+                if (hit1 > hit2)
+                {
+                    Console.WriteLine("hit_1 = {0}, hit_2 = {1}", hit1, hit2);
+                    john.health = john.health - hit1;
+                    Console.WriteLine("john health: " + john.health);
+                } else
+                {
+                    Console.WriteLine("hit 2 > hit 1");
+                }
+
+                hit1 = rand.Next(10);
+                hit2 = rand.Next(10);
+                if (hit1 < hit2)
+                {
+                    Console.WriteLine("hit_1 = {0}, hit_2 = {1}", hit1, hit2);
+                    jas.health = jas.health - hit2;
+                    Console.WriteLine("jas health: " + jas.health);
+                }
+                else
+                {
+                    Console.WriteLine("hit 1 > hit 2");
+                }
+                i++;
+                Console.WriteLine("koniec rundy {0}", i);
+                Console.WriteLine();
+
+                if (jas.health <= 0)
+                {
+                    winner.name = john.name;
+                }
+
+                if (john.health <= 0)
+                {
+                    winner.name = jas.name;
+                }
+
+            } while (jas.health > 0 && john.health > 0);
+
+            Console.WriteLine();
+
+            Console.WriteLine("The winner is: " + winner.name);
+            Console.WriteLine();
+
+            Console.WriteLine();
+
+            Console.WriteLine("(Metoda)The winner is: " + Fighter.fight(jas,john));
+            Console.WriteLine();
 
 
 

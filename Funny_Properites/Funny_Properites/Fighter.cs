@@ -18,13 +18,7 @@ namespace Funny_Properites
             this.health = Health;
         }
 
-        public String Name
-        {
-            get
-            {
-                return name;
-            }
-        }
+        public String Name { get { return name; } }
 
         public int Health
         {
@@ -44,7 +38,6 @@ namespace Funny_Properites
         {
             Fighter winner = new Fighter();
             Random rand = new Random();
-
             int hit1, hit2;
             do
             {

@@ -8,40 +8,8 @@ namespace Funny_Properites
 {
     class Program
     {
-        //public static int[] intToIntArray(int num)
-        //{
-        //    String number = num.ToString();
-        //    int[] intArray = new int[number.Length];
-        //    for (int k = 1; k<=number.Length; k++)
-        //    {
-        //        intArray[k-1] = Int32.Parse(number.Substring(k-1, 1));
-        //    }
-        //    return intArray;
-        //}
-
-        //public static double digPow(int n, int p)
-        //{
-        //    int[] nToArray = intToIntArray(n);
-        //    double sum = 0;
-        //    for (int m = 0; m < nToArray.Length; m++)
-        //    {
-        //        sum = sum + Math.Pow(Convert.ToDouble(nToArray[m]), Convert.ToDouble(p));
-        //    }
-        //    double resztaZDzielenie = sum % n;
-
-        //    if (resztaZDzielenie == 0)
-        //    {
-        //        return sum / n;
-        //    }
-        //    return -1;
-        //}
         static void Main(string[] args)
         {
-            /*
-              This class performs an important function.
-            */
-
-
             //Console.WriteLine("podaj minimalna liczbe:");
             //String positivIntegerMin = Console.ReadLine();
 
@@ -132,14 +100,27 @@ namespace Funny_Properites
 
             //Console.WriteLine("klasa Kata; wynik: " + Kata.Closest(arr));
 
-            Fighter jas = new Fighter("Jas", 22);
-            Fighter john = new Fighter("John", 11);
+            Fighter fighter01 = new Fighter("Jas", 22);
+            Fighter fighter02 = new Fighter("John", 11);
 
-            Fighter winner = new Fighter();
             Random rand = new Random();
 
-            Console.WriteLine("john health: " + john.health);
-            Console.WriteLine("jas health: " + jas.health);
+            //Fighter fighter01 = new Fighter();
+            //Fighter fighter02 = new Fighter();
+
+            //Console.WriteLine("Create fighter 1:");
+            //Console.WriteLine("Fighter's 1 name:");
+            //fighter01.name = Console.ReadLine();
+            //fighter01.health = rand.Next(23);
+            //Console.WriteLine("{0} health = {1}" + fighter01.name, fighter01.health);
+
+            //Console.WriteLine("Create fighter 2:");
+            //Console.WriteLine("Fighter's 2 name:");
+            //fighter02.name = Console.ReadLine();
+            //fighter02.health = rand.Next(23);
+            //Console.WriteLine("{0} health = {1}" + fighter02.name, fighter02.health);
+
+            Fighter winner = new Fighter();
 
             Console.WriteLine();
 
@@ -151,8 +132,8 @@ namespace Funny_Properites
                 if (hit1 > hit2)
                 {
                     Console.WriteLine("hit_1 = {0}, hit_2 = {1}", hit1, hit2);
-                    john.health = john.health - hit1;
-                    Console.WriteLine("john health: " + john.health);
+                    fighter02.health = fighter02.health - hit1;
+                    Console.WriteLine("john health: " + fighter02.health);
                 } else
                 {
                     Console.WriteLine("hit 2 > hit 1");
@@ -163,8 +144,8 @@ namespace Funny_Properites
                 if (hit1 < hit2)
                 {
                     Console.WriteLine("hit_1 = {0}, hit_2 = {1}", hit1, hit2);
-                    jas.health = jas.health - hit2;
-                    Console.WriteLine("jas health: " + jas.health);
+                    fighter01.health = fighter01.health - hit2;
+                    Console.WriteLine("jas health: " + fighter01.health);
                 }
                 else
                 {
@@ -174,29 +155,23 @@ namespace Funny_Properites
                 Console.WriteLine("koniec rundy {0}", i);
                 Console.WriteLine();
 
-                if (jas.health <= 0)
+                if (fighter01.health <= 0)
                 {
-                    winner.name = john.name;
+                    winner.name = fighter02.name;
                 }
 
-                if (john.health <= 0)
+                if (fighter02.health <= 0)
                 {
-                    winner.name = jas.name;
+                    winner.name = fighter01.name;
                 }
 
-            } while (jas.health > 0 && john.health > 0);
+            } while (fighter01.health > 0 && fighter02.health > 0);
 
             Console.WriteLine();
-
             Console.WriteLine("The winner is: " + winner.name);
-            Console.WriteLine();
 
             Console.WriteLine();
-
-            Console.WriteLine("(Metoda)The winner is: " + Fighter.fight(jas,john));
-            Console.WriteLine();
-
-
+            Console.WriteLine("(Metoda)The winner is: " + Fighter.fight(fighter01,fighter02));
 
             Console.ReadKey();
         }

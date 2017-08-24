@@ -10,6 +10,8 @@ namespace Funny_Properites
     {
         static void Main(string[] args)
         {
+            #region opis
+
             //Console.WriteLine("podaj minimalna liczbe:");
             //String positivIntegerMin = Console.ReadLine();
 
@@ -100,7 +102,9 @@ namespace Funny_Properites
 
             //Console.WriteLine("klasa Kata; wynik: " + Kata.Closest(arr));
 
-            Fighter fighter01 = new Fighter("Jas", 22);
+#endregion
+
+            Fighter fighter01 = new Fighter("Steav", 22);
             Fighter fighter02 = new Fighter("John", 11);
 
             Random rand = new Random();
@@ -170,8 +174,8 @@ namespace Funny_Properites
             Console.WriteLine();
             Console.WriteLine("The winner is: " + winner.name);
 
-            Console.WriteLine();
-            Console.WriteLine("(Metoda)The winner is: " + Fighter.fight(fighter01,fighter02));
+            //Console.WriteLine();
+            //Console.WriteLine("(Metoda)The winner is: " + Fighter.fight(fighter01,fighter02));
 
             Console.ReadKey();
         }

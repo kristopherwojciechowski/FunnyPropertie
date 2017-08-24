@@ -32,8 +32,6 @@ namespace Funny_Properites
             }
         }
 
-        // set accesors: GET & SET
-
         public static string fight(Fighter fighter1, Fighter fighter2)
         {
             Fighter winner = new Fighter();
@@ -46,6 +44,7 @@ namespace Funny_Properites
                 if (hit1 > hit2)
                 {
                     fighter2.health = fighter2.health - hit1;
+                    Console.WriteLine("jas health: " + fighter2.health);
                 }
 
                 hit1 = rand.Next(10);
@@ -68,6 +67,19 @@ namespace Funny_Properites
             } while (fighter1.health > 0 && fighter2.health > 0);
 
             return winner.name;
-        } 
+        }
+
+        //Random rand = new Random();
+
+        //public static Fighter CreateFighter(Fighter fighter)
+        //{
+        //    Console.WriteLine("Create fighter 1:");
+        //    Console.WriteLine("Fighter's 1 name:");
+        //    fighter.name = Console.ReadLine();
+        //    fighter.health = rand.Next(23);
+        //    Console.WriteLine("{0} health = {1}", fighter.name, fighter.health);
+
+        //    return new Fighter();
+        //}
     }
 }

@@ -170,7 +170,7 @@ namespace Funny_Properites
             Console.WriteLine();
             //Console.WriteLine("(Metoda)The winner is: " + Fighter.fight(fighter01, fighter02));
 
-            Console.ReadKey();
+            Console.ReadLine();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Funny_Properites
     {
         static void Main(string[] args)
         {
-            #region opis
+            #region opisu brak
 
             //Console.WriteLine("podaj minimalna liczbe:");
             //String positivIntegerMin = Console.ReadLine();
@@ -102,32 +102,26 @@ namespace Funny_Properites
 
             //Console.WriteLine("klasa Kata; wynik: " + Kata.Closest(arr));
 
-            #endregion
+            #endregion 
 
             //Fighter fighter01 = new Fighter("ogryzka", 30);
             //Fighter fighter02 = new Fighter("John", 11);
 
-            Random rand = new Random();
+            //Random rand = new Random();
 
             Fighter fighter01 = new Fighter();
             Fighter fighter02 = new Fighter();
 
-            Console.WriteLine("Create fighter 1:");
-            Console.WriteLine("Fighter's 1 name:");
-            fighter01.name = Console.ReadLine();
-            fighter01.health = rand.Next(11,33);
-            Console.WriteLine("{0} health = {1}", fighter01.name, fighter01.health);
+            Fighter.CreateFighter(fighter01);
+            Console.WriteLine();
+            Fighter.CreateFighter(fighter02);
+            Console.WriteLine();
 
-            Console.WriteLine("Create fighter 2:");
-            Console.WriteLine("Fighter's 2 name:");
-            fighter02.name = Console.ReadLine();
-            fighter02.health = rand.Next(11,33);
-            Console.WriteLine("{0} health = {1}", fighter02.name, fighter02.health);
 
             Fighter winner = new Fighter();
 
             Console.WriteLine();
-
+            #region  this part is replaced with methode from Fighter class
             //int hit1, hit2, i = 0;
             //do
             //{
@@ -138,7 +132,8 @@ namespace Funny_Properites
             //        Console.WriteLine("hit_1 = {0}, hit_2 = {1}", hit1, hit2);
             //        fighter02.health = fighter02.health - hit1;
             //        Console.WriteLine("john health: " + fighter02.health);
-            //    } else
+            //    }
+            //    else
             //    {
             //        Console.WriteLine("hit 2 > hit 1");
             //    }
@@ -174,8 +169,53 @@ namespace Funny_Properites
             //Console.WriteLine();
             //Console.WriteLine("The winner is: " + winner.name);
 
-            //Console.WriteLine();
-            Console.WriteLine("(Metoda)The winner is: " + Fighter.fight(fighter01, fighter02));
+            #endregion
+            string decision;
+            do
+            {
+                Console.WriteLine("{0} health = {1}", fighter01.name, fighter01.health);
+                Console.WriteLine("{0} health = {1}", fighter02.name, fighter02.health);
+
+                int fighter01Health = fighter01.health;
+                int fighter02Health = fighter02.health;
+
+                Console.WriteLine("Would you like to fight??");
+                Console.WriteLine("type: y/n");
+                decision = Console.ReadLine();
+
+                if (decision != "y" && decision != "n")
+                {
+                    Console.WriteLine("type: y/n");
+                }
+                else if(decision == "y")
+                {
+                    winner = Fighter.fight(fighter01, fighter02);
+                    Console.WriteLine("The winner is: " + winner.name);
+                    Console.WriteLine();
+                    if (winner == fighter01)
+                    {
+                        fighter01.health = fighter01Health + 5;
+                        Console.WriteLine("{0} health = {1}", fighter01.name, fighter01.health);
+                        fighter02.health = fighter02Health;
+                        Console.WriteLine("{0} health = {1}", fighter02.name, fighter02.health);
+                    }
+                    else
+                    {
+                        fighter01.health = fighter01Health;
+                        Console.WriteLine("{0} health = {1}", fighter01.name, fighter01.health);
+                        fighter02.health = fighter02Health + 5;
+                        Console.WriteLine("{0} health = {1}", fighter02.name, fighter02.health);
+                    }
+                } else
+                {
+                    Console.WriteLine("NO FIGHT");
+                }
+                Console.WriteLine();
+            } while (decision != "n");
+
+
+            Console.WriteLine();
+            //Console.WriteLine("(Metoda)The winner is: " + Fighter.fight(fighter01, fighter02));
 
             Console.ReadKey();
         }

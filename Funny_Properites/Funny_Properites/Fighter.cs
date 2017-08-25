@@ -26,6 +26,7 @@ namespace Funny_Properites
             {
                 return health;
             }
+
             set
             {
                 health = value;

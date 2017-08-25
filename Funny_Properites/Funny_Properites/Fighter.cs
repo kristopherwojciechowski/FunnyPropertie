@@ -121,7 +121,7 @@ namespace Funny_Properites
             Console.WriteLine("Create fighter:");
             Console.WriteLine("Fighter's name:");
             fighter.name = Console.ReadLine();
-            fighter.health = rand.Next(11,33);
+            fighter.health = rand.Next(11,22);
             Console.WriteLine("{0} health = {1}", fighter.name, fighter.health);
 
             return new Fighter();

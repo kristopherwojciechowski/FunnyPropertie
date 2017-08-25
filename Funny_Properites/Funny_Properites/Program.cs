@@ -147,16 +147,16 @@ namespace Funny_Properites
 
                     if (winner.name == fighter01.name)
                     {
-                        fighter01.health = fighter01Health + 5;
+                        fighter01.health = fighter01Health + 3;
                         Console.WriteLine("{0} health = {1}", fighter01.name, fighter01.health);
-                        fighter02.health = fighter02Health;
+                        fighter02.health = fighter02Health + 1;
                         Console.WriteLine("{0} health = {1}", fighter02.name, fighter02.health);
                     }
                     else
                     {
-                        fighter01.health = fighter01Health;
+                        fighter01.health = fighter01Health + 1;
                         Console.WriteLine("{0} health = {1}", fighter01.name, fighter01.health);
-                        fighter02.health = fighter02Health + 5;
+                        fighter02.health = fighter02Health + 3;
                         Console.WriteLine("{0} health = {1}", fighter02.name, fighter02.health);
                     }
                 } else

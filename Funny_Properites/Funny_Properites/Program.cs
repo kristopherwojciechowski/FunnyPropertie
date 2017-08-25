@@ -145,6 +145,10 @@ namespace Funny_Properites
                     Console.WriteLine("The winner is: " + winner.name);
                     Console.WriteLine();
 
+
+
+
+
                     if (winner.name == fighter01.name)
                     {
                         fighter01.health = fighter01Health + 3;
